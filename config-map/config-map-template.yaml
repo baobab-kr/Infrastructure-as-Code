@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: baobab-qa-template
+  namespace: test
+data:
+  email_host: "smtp.office365.com"
+  email_port: "587"
+  email_auth_user: ""
+  email_auth_password: ""
+  email_tls_ciphers: "SSLv3"
+  email_base_url: ""
+  db_host: "mysql"
+  db_username: ""
+  db_password: ""
+  db_name: "blog"
+  db_port: "3306"
+  db_sync: ""
+  jwt_secret: ""
+  jwt_access_expires: ""
+  jwt_refresh_expires: ""
+  azure_connections: ""
+  azure_blob_container_name: ""
