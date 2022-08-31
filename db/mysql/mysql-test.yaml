@@ -15,9 +15,11 @@ spec:
         app: mysql
     spec:
       containers:
-        - image: base-mysql-8.0.28:v0.0.1
-          name: mysql
+        - name: mysql
+          image: base-mysql-8.0.28-test:v0.0.1
           imagePullPolicy: Never
+          ports:
+            - containerPort: 3306
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
@@ -29,9 +31,6 @@ spec:
                 configMapKeyRef:
                   name: baobab-qa
                   key: db_name
-          ports:
-            - containerPort: 3306
-              name: mysql
           resources:
             requests:
               cpu: 100m
@@ -42,6 +41,17 @@ spec:
           volumeMounts:
             - name: mysql-persistent-storage
               mountPath: /var/lib/mysql
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: baobab-test
+                  key: db_password
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: baobab-test
+                  key: db_name
       volumes:
         - name: mysql-persistent-storage
           persistentVolumeClaim:
