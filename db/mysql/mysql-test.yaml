@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: qa
+  namespace: test
 spec:
   selector:
     matchLabels:
@@ -15,8 +15,9 @@ spec:
         app: mysql
     spec:
       containers:
-        - image: ghcr.io/baobab-kr/infrastructure-as-code/base-mysql-8.0.28:v0.1.2
+        - image: base-mysql-8.0.28:v0.0.1
           name: mysql
+          imagePullPolicy: Never
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
@@ -38,12 +39,19 @@ spec:
             limits:
               cpu: 100m
               memory: 512Mi
+          volumeMounts:
+            - name: mysql-persistent-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: mysql-volumeclaim 
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: mysql
-  namespace: qa
+  namespace: test
 spec:
   type: ClusterIP
   ports:
