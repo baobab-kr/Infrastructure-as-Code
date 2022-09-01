@@ -5,8 +5,8 @@ metadata:
   namespace: qa
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: azurefile-sc-qa
   resources:
     requests:
-      storage: 100Gi
+      storage: 10Gi
