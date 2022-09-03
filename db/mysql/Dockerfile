@@ -1,5 +1,2 @@
-FROM mysql:8.0.28
-ENV MYSQL_DATABASE=blog
-ENV MYSQL_ROOT_PASSWORD=
-COPY ./my.cnf /etc/mysql/conf.d/my.cnf
+FROM docker.io/bitnami/mysql:8.0.25-debian-10-r1
 COPY ./sqls /docker-entrypoint-initdb.d/
