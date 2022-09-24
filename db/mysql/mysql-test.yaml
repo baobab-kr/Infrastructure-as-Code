@@ -16,17 +16,17 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: base-mysql-8.0.28-test:v0.0.1
+          image: base-mysql-8.0.25-test:v0.0.53
           imagePullPolicy: Never
           ports:
             - containerPort: 3306
           resources:
             requests:
-              cpu: 100m
-              memory: 512Mi
+              cpu: 2
+              memory: 1Gi
             limits:
-              cpu: 100m
-              memory: 512Mi
+              cpu: 2
+              memory: 1Gi
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
