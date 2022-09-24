@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: ghcr.io/baobab-kr/infrastructure-as-code/base-mysql-8.0.28:v0.1.2
+          image: ghcr.io/baobab-kr/infrastructure-as-code/base-mysql-8.0.25:v0.1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 3306
