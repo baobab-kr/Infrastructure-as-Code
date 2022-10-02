@@ -1,4 +1,3 @@
-FROM docker.io/bitnami/mysql:8.0.25-debian-10-r1
+FROM --platform=linux/amd64 mysql:8.0.28
 COPY ./sqls /docker-entrypoint-initdb.d/
-COPY my_custom.cnf /opt/bitnami/mysql/conf/my.cnf
-ENV MYSQL_ROOT_PASSWORD baobab
+ENV MYSQL_ROOT_PASSWORD=

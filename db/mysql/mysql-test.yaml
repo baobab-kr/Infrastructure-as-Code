@@ -16,17 +16,17 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: ghcr.io/baobab-kr/infrastructure-as-code/base-mysql-8.0.25:v0.1.0
-          imagePullPolicy: Always
+          image: mysql-8.0.28-test:v0.0.1
+          imagePullPolicy: Never
           ports:
             - containerPort: 3306
           resources:
             requests:
-              cpu: 2
-              memory: 1Gi
+              cpu: 500m
+              memory: 512Mi
             limits:
-              cpu: 2
-              memory: 1Gi
+              cpu: 500m
+              memory: 512Mi
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
