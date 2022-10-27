@@ -23,5 +23,5 @@ data:
   azure_blob_container_name: ""
   node_env: "development"
   react_app_api_root: "http://localhost:3000/"
-  port: "2999"
+  front_server_port: "2999"
   generate_sourcemap: "false"
