@@ -16,13 +16,8 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: mysql:5.7.16
+          image: bitnami/mysql:5.7.40
           imagePullPolicy: Always
-          command:
-            - mysqld
-            - --user=mysql
-            - --character-set-server=utf8mb4
-            - --collation-server=utf8mb4_unicode_ci
           ports:
             - containerPort: 3306
           env:
@@ -36,6 +31,16 @@ spec:
                 configMapKeyRef:
                   name: baobab-qa
                   key: db_name
+            - name : MYSQL_CHARACTER_SET
+              valueFrom:
+                configMapKeyRef:
+                  name: baobab-qa
+                  key: mysql_character_set
+            - name : MYSQL_COLLATE
+              valueFrom:
+                configMapKeyRef:
+                  name: baobab-qa
+                  key: mysql_collate
           resources:
             requests:
               cpu: 100m

@@ -25,3 +25,5 @@ data:
   react_app_api_root: "http://localhost:3000/"
   front_server_port: "2999"
   generate_sourcemap: "false"
+  mysql_character_set: "utf8mb4"
+  mysql_collate: "utf8mb4_unicode_ci"
