@@ -1,3 +1,4 @@
 config-map-qa.yaml
 config-map-test.yaml
 config-map-prod.yaml
+nginx-ingress-configure*
