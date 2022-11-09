@@ -1,1 +1,3 @@
-CREATE DATABASE IF NOT EXISTS blog;
+create database blog;
+-- grant all privileges on blog.* to 'baobab'@'%' identified by 'PASSWORD';
+flush privileges;
