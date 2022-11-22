@@ -28,3 +28,4 @@ data:
   mysql_character_set: "utf8mb4"
   mysql_collate: "utf8mb4_unicode_ci"
   cookie_domain: ".baobab.blog"
+  filtering_base_url: "https://filtering.qa.baobab.blog/predict"
