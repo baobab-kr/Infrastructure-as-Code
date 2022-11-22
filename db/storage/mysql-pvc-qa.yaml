@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc-qa
+  namespace: qa
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: azurefile-sc-qa
+  resources:
+    requests:
+      storage: 10Gi

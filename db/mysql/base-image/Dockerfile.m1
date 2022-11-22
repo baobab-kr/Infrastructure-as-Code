@@ -1,0 +1,2 @@
+FROM --platform=linux/x86_64 mysql:5.7.16
+COPY init.sql /docker-entrypoint-initdb.d/
