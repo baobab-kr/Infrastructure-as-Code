@@ -31,3 +31,6 @@ data:
   filtering_base_url: ""
   client_id: ""
   client_secret: ""
+  react_app_client_id: ""
+  react_app_client_secret: ""
+  react_app_github_callback_url: ""
