@@ -17,6 +17,9 @@ spec:
     - hosts:
         - api.baobab.blog
       secretName: tls-prod-api
+    - hosts:
+      - filtering.baobab.blog
+      secretName: tls-prod-filtering
   rules:
     # prod
     - host: baobab.blog
@@ -39,3 +42,13 @@ spec:
               name: blog-service-prod-external
               port:
                 number: 3000
+    - host: filtering.baobab.blog
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: filtering-service-prod-external
+              port:
+                number: 5000                
